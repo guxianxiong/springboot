@@ -2,6 +2,7 @@ package com.guxx.springboot.mapper;
 
 import java.io.Serializable;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * DAO公共基类，由MybatisGenerator自动生成请勿修改
@@ -24,9 +25,9 @@ public interface MyBatisBaseDao<Model, PK extends Serializable, E> {
 
     Model selectByPrimaryKey(PK id);
 
-    //int updateByExampleSelective(@Param("record") Model record, @Param("example") E example);
+    int updateByExampleSelective(@Param("record") Model record, @Param("example") E example);
 
-    //int updateByExample(@Param("record") Model record, @Param("example") E example);
+    int updateByExample(@Param("record") Model record, @Param("example") E example);
 
     int updateByPrimaryKeySelective(Model record);
 

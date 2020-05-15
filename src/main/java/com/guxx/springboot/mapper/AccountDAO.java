@@ -1,8 +1,6 @@
 package com.guxx.springboot.mapper;
 
 
-import com.guxx.springboot.entity.Account;
-import com.guxx.springboot.entity.AccountExample;
 import org.springframework.stereotype.Repository;
 
 /**

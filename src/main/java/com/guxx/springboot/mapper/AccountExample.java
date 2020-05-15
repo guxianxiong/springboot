@@ -1,4 +1,4 @@
-package com.guxx.springboot.entity;
+package com.guxx.springboot.mapper;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.guxx.springboot.mapper.AccountDAO">
-  <resultMap id="BaseResultMap" type="com.guxx.springboot.model.Account">
+<mapper namespace="com.guxx.springboot.mapper.AccountMapper">
+  <resultMap id="BaseResultMap" type="com.guxx.springboot.entity.Account">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List">
     id, login_name, `password`, nick_name, age, `location`, `role`
   </sql>
-  <select id="selectByExample" parameterType="com.guxx.springboot.model.AccountExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.guxx.springboot.mapper.AccountExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,13 +103,13 @@
     delete from account
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.guxx.springboot.model.AccountExample">
+  <delete id="deleteByExample" parameterType="com.guxx.springboot.mapper.AccountExample">
     delete from account
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.guxx.springboot.model.Account">
+  <insert id="insert" parameterType="com.guxx.springboot.mapper.Account">
     insert into account (id, login_name, `password`, 
       nick_name, age, `location`, 
       `role`)
@@ -117,7 +117,7 @@
       #{nickName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
       #{role,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.guxx.springboot.model.Account">
+  <insert id="insertSelective" parameterType="com.guxx.springboot.mapper.Account">
     insert into account
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -166,7 +166,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.guxx.springboot.model.AccountExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.guxx.springboot.mapper.AccountExample" resultType="java.lang.Long">
     select count(*) from account
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -214,7 +214,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.guxx.springboot.model.Account">
+  <update id="updateByPrimaryKeySelective" parameterType="com.guxx.springboot.mapper.Account">
     update account
     <set>
       <if test="loginName != null">
@@ -238,7 +238,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.guxx.springboot.model.Account">
+  <update id="updateByPrimaryKey" parameterType="com.guxx.springboot.mapper.Account">
     update account
     set login_name = #{loginName,jdbcType=VARCHAR},
       `password` = #{password,jdbcType=VARCHAR},
