@@ -21,6 +21,13 @@ public class RespStat {
   }
 
 
+  public static RespStat build(int code, String msg) {
+    // TODO Auto-generated method stub
+    return new RespStat(code, msg, "meiyou");
+  }
+
+
+
   public int getCode() {
     return code;
   }

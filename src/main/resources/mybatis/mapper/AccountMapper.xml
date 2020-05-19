@@ -109,7 +109,7 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.guxx.springboot.mapper.Account">
+  <insert id="insert" parameterType="com.guxx.springboot.entity.Account">
     insert into account (id, login_name, `password`, 
       nick_name, age, `location`, 
       `role`)
@@ -117,7 +117,7 @@
       #{nickName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{location,jdbcType=VARCHAR}, 
       #{role,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.guxx.springboot.mapper.Account">
+  <insert id="insertSelective" parameterType="com.guxx.springboot.entity.Account">
     insert into account
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -214,7 +214,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.guxx.springboot.mapper.Account">
+  <update id="updateByPrimaryKeySelective" parameterType="com.guxx.springboot.entity.Account">
     update account
     <set>
       <if test="loginName != null">
@@ -238,7 +238,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.guxx.springboot.mapper.Account">
+  <update id="updateByPrimaryKey" parameterType="com.guxx.springboot.entity.Account">
     update account
     set login_name = #{loginName,jdbcType=VARCHAR},
       `password` = #{password,jdbcType=VARCHAR},

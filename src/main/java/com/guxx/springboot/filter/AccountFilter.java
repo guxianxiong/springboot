@@ -21,7 +21,8 @@ import org.springframework.stereotype.Component;
 @WebFilter(urlPatterns = "/*")
 public class AccountFilter implements Filter {
 
-  private final String[] IGNORE_URI = {"/index", "/account/login", "/css", "/js", "/images"};
+  private final String[] IGNORE_URI = {"/index", "/account/login", "/account/validateAccount"
+      ,"/css", "/js", "/images"};
 
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
