@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" >
+  <title>人力资源管理系统</title>
+
+  <script type="text/javascript" th:src="@{/js/common/jquery-3.4.1.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+  <script type="text/javascript" th:src="@{/js/bootstrap-table.min.js}"></script>
+
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/css/bootstrap-table.min.css}">
+</head>
+<body>
+
+
+<div align="center" style="width: 300px">
+  <form action="/account/fileUploadController" method="post" enctype="multipart/form-data">
+    <table class="table table-bordered" >
+      <tr>
+        <td>登录名：</td>
+        <td>[[${session.account.loginName}]]</td>
+      </tr>
+
+      <tr>
+        <td>密码：</td>
+        <td><input type="password" name="password"></td>
+
+      </tr>
+
+      <tr>
+        <td>头像：</td>
+        <td>
+          上传文件：<input type="file" name="filename"/><br/>
+          <input type="submit"/>
+        </td>
+
+      </tr>
+    </table>
+  </form>
+
+</div>
+</body>
+</html>

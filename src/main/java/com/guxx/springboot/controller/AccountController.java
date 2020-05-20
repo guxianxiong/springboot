@@ -62,4 +62,9 @@ public class AccountController {
     return stat;
   }
 
+  @RequestMapping("/profile")
+  public String profile() {
+    return "/account/profile";
+  }
+
 }
